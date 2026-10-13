@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "卫戍协议 聊天卫士",
+  "version": "1.0.0",
+  "description": "卫戍协议（*.xiaolubao.com）局内聊天：按人屏蔽、按人自动回复。",
+  "permissions": ["storage"],
+  "action": { "default_popup": "popup.html", "default_title": "聊天卫士" },
+  "content_scripts": [
+    { "matches": ["*://*.xiaolubao.com/*"], "js": ["core.js", "inject.js"], "run_at": "document_start", "world": "MAIN", "all_frames": false },
+    { "matches": ["*://*.xiaolubao.com/*"], "js": ["bridge.js"], "run_at": "document_start", "all_frames": false }
+  ]
+}

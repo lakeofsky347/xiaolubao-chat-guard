@@ -1,0 +1,19 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><link rel="stylesheet" href="popup.css"></head>
+<body>
+<h1>聊天卫士 <small id="stats"></small></h1>
+<section><h2>屏蔽</h2>
+<label><input type="checkbox" id="enabled"> 启用屏蔽（总开关）</label>
+<label><input type="checkbox" id="blockEmotes"> 同时屏蔽其表情</label>
+<ul id="blockList" class="list"></ul>
+<div class="add"><input id="blockInput" placeholder="playerId 或 昵称"><button data-add="block">加入</button></div></section>
+<section><h2>自动回复</h2>
+<label><input type="checkbox" id="replyEnabled"> 启用自动回复</label>
+<ul id="replyList" class="list"></ul>
+<div class="add"><input id="replyInput" placeholder="playerId 或 昵称"><button data-add="reply">加入</button></div>
+<label>文案（每行一条，超过20字自动截断）<textarea id="replies" rows="4"></textarea></label>
+<div class="row"><label>方式 <select id="replyMode"><option value="random">随机</option><option value="round">轮流</option></select></label>
+<label>冷却(秒) <input type="number" id="cooldownSec" min="3" max="600"></label>
+<label>每分钟上限 <input type="number" id="perMinute" min="1" max="10"></label></div></section>
+<section><h2>最近发言者</h2><ul id="speakers" class="list"></ul><button id="clearSpeakers">清空</button></section>
+<p class="hint">输入的若形如 ID（不含空格、≥8 位字母数字/-_）按 playerId 匹配，否则按昵称。设置自动保存。</p>
+<script src="popup.js"></script></body></html>
